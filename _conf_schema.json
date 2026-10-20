@@ -1,0 +1,27 @@
+{
+  "enable": {
+    "type": "bool",
+    "default": true,
+    "description": "总开关。关闭后不动 system_prompt。"
+  },
+  "strip_phrases": {
+    "type": "list",
+    "default": [
+      "never return an empty response; ",
+      "never return an empty response;",
+      "briefly explain the purpose when starting a new type of task, but not before every tool call; ",
+      "briefly explain the purpose when starting a new type of task, but not before every tool call;"
+    ],
+    "description": "要从 system_prompt 里剥离的原文片段（精确匹配，含标点与空格）。默认剥掉「禁止空回复」和「必须说明工具用途」两句——这两句在群聊里会逼出没话找话和客服腔。"
+  },
+  "append_prompt": {
+    "type": "text",
+    "default": "工具调用前后不要向群友说明你在做什么，也不要汇总返回结果；查完直接把结论说进对话里。无话可说时可以什么都不说。",
+    "description": "剥离后追加的群聊版要求。留空则不追加。"
+  },
+  "debug": {
+    "type": "bool",
+    "default": false,
+    "description": "输出每轮剥离明细（剥了几处、prompt 长度变化）。"
+  }
+}

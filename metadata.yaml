@@ -1,0 +1,15 @@
+name: astrbot_plugin_chat_voice
+display_name: 群聊语气矫正
+desc: "剥掉 AstrBot 核心硬编码在 system prompt 里的「工具提示」，换成群聊版。核心那段含『never return an empty response』（禁止空回复）和『briefly explain the purpose』（鼓励播报工具用途），在群聊里会逼出没话找话和『我先帮你查一下』的客服腔，而且因为追加在人格之后、权重更高，光靠人格提示压不住。本插件做定点字符串剥离，只动有害的两句，无害的保留；剥离项与追加内容都可配置。"
+short_desc: 去掉「禁止空回复/必须播报工具」的客服腔
+author: Randy Lua
+repo: https://github.com/RandyLuaW/astrbot_plugin_chat_voice
+version: 1.0.0
+astrbot_version: ">=4.17.0"
+support_platforms:
+  - aiocqhttp
+tags:
+  - 群聊
+  - 提示词
+  - 语气
+  - 人味
